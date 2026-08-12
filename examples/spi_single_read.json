@@ -1,0 +1,15 @@
+{
+  "signal": [
+    {"name": "Phase", "wave": "=3......4......7......=", "data": ["", "CMD", "ADDR", "DATA", ""], "phase": -0.5},
+    {"name": "CS#",   "wave": "10..|......|......|...1", "phase": -0.5},
+    {"name": "SCLK",  "wave": "lppp|pppppp|pppppp|pppl"},
+    {},
+    ["Single SPI (1-1-1)",
+      {"name": "IO0 / MOSI", "wave": "z333|333444|444z..|....", "data": ["C7", "C6", "C5", "C2", "C1", "C0", "A23", "A22", "A21", "A2", "A1", "A0"], "phase": -0.5},
+      {"name": "IO1 / MISO", "wave": "z...|......|...777|777z", "data": ["B0[7]", "B0[6]", "B0[5]", "BN[2]", "BN[1]", "BN[0]"], "phase": -0.5}
+    ]
+  ],
+  "head": {"text": "SPI NOR Flash Read - Single Mode (0x03)", "tick": 0},
+  "foot": {"text": "Omitted: CMD C[4:3] (2 CLK); ADDR A[20:3] (18 CLK); DATA B0[4:0] through BN[7:3]"},
+  "config": {"hscale": 2}
+}

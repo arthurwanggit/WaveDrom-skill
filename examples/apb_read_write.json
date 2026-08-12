@@ -1,0 +1,21 @@
+{
+  "signal": [
+    {"name": "PCLK", "wave": "P..........."},
+    {},
+    ["APB",
+      {"name": "PADDR",   "wave": "==.=.=.=....", "data": ["", "A_WRITE", "", "A_READ", ""], "phase": -0.5},
+      {"name": "PWRITE",  "wave": "01.0........", "phase": -0.5},
+      {"name": "PSEL",    "wave": "01.0.1.0....", "phase": -0.5},
+      {"name": "PENABLE", "wave": "0.10..10....", "phase": -0.5},
+      {"name": "PWDATA",  "wave": "==.=........", "data": ["", "D_WRITE", ""], "phase": -0.5},
+      {"name": "PRDATA",  "wave": "=.....==....", "data": ["", "D_READ", ""], "phase": -0.5},
+      {"name": "PREADY",  "wave": "1...........", "phase": -0.5},
+      {"name": "PSLVERR", "wave": "0...........", "phase": -0.5}
+    ]
+  ],
+  "head": {
+    "text": "APB write followed by read, no wait states",
+    "tick": 0
+  },
+  "config": {"hscale": 2}
+}

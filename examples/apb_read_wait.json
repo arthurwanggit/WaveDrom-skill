@@ -1,0 +1,22 @@
+{
+  "signal": [
+    {"name": "Phase", "wave": "=23..=......", "data": ["", "SETUP", "ACCESS + WAIT", ""]},
+    {"name": "PCLK", "wave": "P..........."},
+    {},
+    ["Request",
+      {"name": "PADDR",   "wave": "==...=......", "data": ["", "A_READ", ""], "phase": -0.5},
+      {"name": "PWRITE",  "wave": "0...........", "phase": -0.5},
+      {"name": "PSEL",    "wave": "01...0......", "phase": -0.5},
+      {"name": "PENABLE", "wave": "0.1..0......", "phase": -0.5}
+    ],
+    {},
+    ["Read response",
+      {"name": "PRDATA",  "wave": "=...==......", "data": ["", "D_READ", ""], "phase": -0.5},
+      {"name": "PREADY",  "wave": "1.0.1.......", "phase": -0.5},
+      {"name": "PSLVERR", "wave": "0...........", "phase": -0.5}
+    ]
+  ],
+  "head": {"text": "APB read with two Access wait periods", "tick": 0},
+  "foot": {"text": "Address and control remain stable until the PREADY-high completion edge", "tock": 0},
+  "config": {"hscale": 2}
+}

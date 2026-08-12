@@ -1,0 +1,15 @@
+{
+  "signal": [
+    {"name": "Phase", "wave": "=3......4......6......7........=", "data": ["", "CMD", "ADDR", "8 dummy", "DATA", ""], "phase": -0.5},
+    {"name": "CS#",   "wave": "10..|......|......|.......|....1", "phase": -0.5},
+    {"name": "SCLK",  "wave": "lppp|pppppp|pppppp|ppppppp|ppppl"},
+    {},
+    ["Dual I/O SPI (1-2-2)",
+      {"name": "IO0", "wave": "z333|333444|444z..|...7777|7777z", "data": ["C7", "C6", "C5", "C2", "C1", "C0", "A22", "A20", "A18", "A4", "A2", "A0", "B0[6]", "B0[4]", "B0[2]", "B0[0]", "BN[6]", "BN[4]", "BN[2]", "BN[0]"], "phase": -0.5},
+      {"name": "IO1", "wave": "z...|...444|444z..|...7777|7777z", "data": ["A23", "A21", "A19", "A5", "A3", "A1", "B0[7]", "B0[5]", "B0[3]", "B0[1]", "BN[7]", "BN[5]", "BN[3]", "BN[1]"], "phase": -0.5}
+    ]
+  ],
+  "head": {"text": "SPI NOR Flash Fast Read Dual I/O (0xBB, 1-2-2)", "tick": 0},
+  "foot": {"text": "Omitted: CMD C[4:3] (2 CLK); ADDR A[17:6] (6 CLK); middle 2 of 8 dummy CLK; Bytes 1 through N-1."},
+  "config": {"hscale": 2}
+}

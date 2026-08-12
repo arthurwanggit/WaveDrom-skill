@@ -1,0 +1,10 @@
+{
+  "signal": [
+    {"name": "CLK",     "wave": "P........."},
+    {},
+    {"name": "VALID",   "wave": "0.1......0", "phase": -0.5},
+    {"name": "READY",   "wave": "0...1.0.10", "phase": -0.5},
+    {"name": "BUS",     "wave": "=.=...=..=", "data": ["", "A", "B", ""], "phase": -0.5}
+  ],
+  "head": {"tick": 0}
+}

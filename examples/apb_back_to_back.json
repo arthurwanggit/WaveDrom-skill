@@ -1,0 +1,23 @@
+{
+  "signal": [
+    {"name": "Phase", "wave": "=2323=....", "data": ["", "SETUP", "ACCESS", "SETUP", "ACCESS", ""]},
+    {"name": "PCLK", "wave": "P........."},
+    {},
+    ["Request",
+      {"name": "PADDR",   "wave": "==.=.=....", "data": ["", "A_WRITE", "A_READ", ""], "phase": -0.5},
+      {"name": "PWRITE",  "wave": "01.0......", "phase": -0.5},
+      {"name": "PSEL",    "wave": "01...0....", "phase": -0.5},
+      {"name": "PENABLE", "wave": "0.1010....", "phase": -0.5}
+    ],
+    {},
+    ["Data and response",
+      {"name": "PWDATA",  "wave": "==.=......", "data": ["", "D_WRITE", ""], "phase": -0.5},
+      {"name": "PRDATA",  "wave": "=...==....", "data": ["", "D_READ", ""], "phase": -0.5},
+      {"name": "PREADY",  "wave": "1.........", "phase": -0.5},
+      {"name": "PSLVERR", "wave": "0.........", "phase": -0.5}
+    ]
+  ],
+  "head": {"text": "Back-to-back APB write and read to one peripheral", "tick": 0},
+  "foot": {"text": "PSEL stays high; PENABLE goes low for each new SETUP period", "tock": 0},
+  "config": {"hscale": 2}
+}

@@ -1,0 +1,23 @@
+{
+  "signal": [
+    {"name": "CLK",        "wave": "P..........."},
+    {},
+    ["Bus segment semantics",
+      {"name": "held value", "wave": "=.=....=....", "data": ["", "A", ""], "phase": -0.5},
+      {"name": "two values", "wave": "=.==...=....", "data": ["", "A", "B", ""], "phase": -0.5},
+      {"name": "three values", "wave": "=.=.=.==....", "data": ["", "A", "B", "C", ""], "phase": -0.5}
+    ],
+    {},
+    ["Idle semantics",
+      {"name": "blank bus idle", "wave": "=.=..=......", "data": ["", "DATA", ""], "phase": -0.5},
+      {"name": "unknown idle", "wave": "x.=..x......", "data": ["DATA"], "phase": -0.5},
+      {"name": "high-Z idle",  "wave": "z.=..z......", "data": ["DATA"], "phase": -0.5}
+    ],
+    {},
+    ["Colored data",
+      {"name": "colors 2-5", "wave": "=.2.3.4.5.=.", "data": ["", "C2", "C3", "C4", "C5", ""], "phase": -0.5},
+      {"name": "colors 6-9", "wave": "=.6.7.8.9.=.", "data": ["", "C6", "C7", "C8", "C9", ""], "phase": -0.5}
+    ]
+  ],
+  "head": {"text": "Use dots to hold a bus segment", "tick": 0}
+}

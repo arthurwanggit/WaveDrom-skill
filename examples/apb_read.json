@@ -1,0 +1,22 @@
+{
+  "signal": [
+    {"name": "Phase", "wave": "=23=......", "data": ["", "SETUP", "ACCESS", ""]},
+    {"name": "PCLK", "wave": "P........."},
+    {},
+    ["Request",
+      {"name": "PADDR",   "wave": "==.=......", "data": ["", "A_READ", ""], "phase": -0.5},
+      {"name": "PWRITE",  "wave": "0.........", "phase": -0.5},
+      {"name": "PSEL",    "wave": "01.0......", "phase": -0.5},
+      {"name": "PENABLE", "wave": "0.10......", "phase": -0.5}
+    ],
+    {},
+    ["Read response",
+      {"name": "PRDATA",  "wave": "=.==......", "data": ["", "D_READ", ""], "phase": -0.5},
+      {"name": "PREADY",  "wave": "1.........", "phase": -0.5},
+      {"name": "PSLVERR", "wave": "0.........", "phase": -0.5}
+    ]
+  ],
+  "head": {"text": "APB read, no wait states", "tick": 0},
+  "foot": {"text": "PRDATA is sampled at the end of ACCESS when PREADY is high", "tock": 0},
+  "config": {"hscale": 2}
+}

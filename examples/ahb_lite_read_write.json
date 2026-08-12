@@ -1,0 +1,25 @@
+{
+  "signal": [
+    {"name": "HCLK", "wave": "P........."},
+    {},
+    ["Address and control",
+      {"name": "HADDR",  "wave": "====......", "data": ["", "A_WRITE", "A_READ", ""], "phase": -0.5},
+      {"name": "HTRANS", "wave": "==.=......", "data": ["IDLE", "NSEQ", "IDLE"], "phase": -0.5},
+      {"name": "HWRITE", "wave": "010.......", "phase": -0.5},
+      {"name": "HSIZE",  "wave": "==.=......", "data": ["", "WORD", ""], "phase": -0.5},
+      {"name": "HBURST", "wave": "==.=......", "data": ["", "SINGLE", ""], "phase": -0.5}
+    ],
+    {},
+    ["Data and response",
+      {"name": "HWDATA", "wave": "=.==......", "data": ["", "D_WRITE", ""], "phase": -0.5},
+      {"name": "HRDATA", "wave": "=..==.....", "data": ["", "D_READ", ""], "phase": -0.5},
+      {"name": "HREADY", "wave": "1.........", "phase": -0.5},
+      {"name": "HRESP",  "wave": "0.........", "phase": -0.5}
+    ]
+  ],
+  "head": {
+    "text": "AHB-Lite single write followed by single read",
+    "tick": 0
+  },
+  "config": {"hscale": 2}
+}
