@@ -1,0 +1,23 @@
+{
+  "signal": [
+    {"name": "HCLK", "wave": "P......"},
+    {},
+    ["Address and control",
+      {"name": "HTRANS", "wave": "==.==..", "data": ["NONSEQ", "SEQ", "SEQ", "SEQ"], "phase": -0.5},
+      {"name": "HADDR",  "wave": "==.==..", "data": ["0x38", "0x3C", "0x30", "0x34"], "phase": -0.5},
+      {"name": "HBURST", "wave": "=......", "data": ["WRAP4"], "phase": -0.5},
+      {"name": "HWRITE", "wave": "1......", "phase": -0.5},
+      {"name": "HSIZE",  "wave": "=......", "data": ["Word"], "phase": -0.5},
+      {"name": "HPROT",  "wave": "=......", "data": ["Control for burst"], "phase": -0.5}
+    ],
+    {},
+    ["Data and response",
+      {"name": "HWDATA", "wave": "==.===.", "data": ["", "Data(0x38)", "Data(0x3C)", "Data(0x30)", "Data(0x34)"], "phase": -0.5},
+      {"name": "HREADY", "wave": "101....", "phase": -0.5},
+      {"name": "HRDATA", "wave": "==.===.", "data": ["", "Data(0x38)", "Data(0x3C)", "Data(0x30)", "Data(0x34)"], "phase": -0.5}
+    ]
+  ],
+  "head": {"text": "AMBA AHB - Figure 3-7: Four-beat wrapping burst", "tick": 0},
+  "foot": {"text": "Word transfers wrap at 16-byte boundary (0x3C -> 0x30); one wait state on first transfer", "tock": 0},
+  "config": {"hscale": 2}
+}

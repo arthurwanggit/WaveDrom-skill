@@ -19,7 +19,10 @@ Generate glitch-free WaveDrom JSON timing diagrams and render them with
   `examples/apb_read_wait.json`, `examples/apb_write.json`,
   `examples/apb_back_to_back.json`, or `examples/apb_error.json`. Use
   `examples/apb_read_write.json` only for a compact write-then-read overview.
-- Use `examples/ahb_lite_read_write.json` for AHB-Lite protocol timing.
+- Read `references/ahb-timing.md` before drawing AHB/AHB-Lite transfers. Use
+  `examples/ahb_lite_read_write.json` for a single write-then-read and
+  `examples/ahb_four_beat_wrapping_burst.json` for a four-beat wrapping burst
+  with a wait state.
 - Use `examples/spi_single_read.json`, `examples/spi_dual_read.json`, and
   `examples/spi_quad_read.json` for colored protocol phases, parallel SPI I/O,
   and compressed timelines. Read `references/spi-flash-read.md` first when
@@ -67,7 +70,8 @@ All paths are relative to this Skill directory.
 - Back-to-back APB transfers must include a new Setup period with `PENABLE`
   low. Show `PSLVERR` only in the final Access period where it is meaningful.
 - AHB-Lite examples must distinguish address and data phases and preserve the
-  pipeline relationship between them.
+  pipeline relationship between them. Hold address and control through wait
+  states and keep `HRDATA`/`HWDATA` valid only where `HREADY` is high.
 - Do not accept unintended glitches, bus crossovers, clipped or overlapping
   labels, ambiguous idle shapes, or signals that are visibly misaligned with
   their sampling clock edge.

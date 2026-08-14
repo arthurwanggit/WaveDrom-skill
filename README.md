@@ -2,7 +2,7 @@
 
 WaveDrom 数字时序图绘制技能。提供 WaveJSON 语法参考、无毛刺绘图规则、模板和同步总线协议示例。
 
-![APB 背靠背写读时序图](examples/apb_back_to_back.svg)
+![AHB 四拍回绕突发时序图](examples/ahb_four_beat_wrapping_burst.svg)
 
 ## 文件结构
 
@@ -11,6 +11,7 @@ WaveDrom 数字时序图绘制技能。提供 WaveJSON 语法参考、无毛刺�
 ├── references/
 │   ├── wavedrom-syntax.md       # 脱敏精炼语法参考
 │   ├── apb-timing.md            # APB 阶段、等待、连续传输及错误规则
+│   ├── ahb-timing.md            # AHB/AHB-Lite 流水线、等待态、突发与回绕
 │   └── spi-flash-read.md        # SPI NOR Flash 读时序约束
 ├── templates/
 │   └── minimal.json             # 最小可渲染模板
@@ -24,6 +25,7 @@ WaveDrom 数字时序图绘制技能。提供 WaveJSON 语法参考、无毛刺�
 │   ├── apb_back_to_back.json    # APB 背靠背传输
 │   ├── apb_error.json           # APB3 错误响应
 │   ├── ahb_lite_read_write.json # AHB-Lite 简单写后读
+│   ├── ahb_four_beat_wrapping_burst.json # AHB 四拍回绕突发（含等待态）
 │   ├── spi_single_read.json     # SPI NOR 0x03，1-1-1
 │   ├── spi_dual_read.json       # SPI NOR 0xBB，1-2-2
 │   └── spi_quad_read.json       # SPI NOR 0xEB，1-4-4
@@ -37,9 +39,10 @@ WaveDrom 数字时序图绘制技能。提供 WaveJSON 语法参考、无毛刺�
 1. 以 `templates/minimal.json` 为起点
 2. 参考 `references/wavedrom-syntax.md` 编写 WaveJSON
 3. 绘制 APB 前先阅读 `references/apb-timing.md`，再按读、写、等待、背靠背或错误响应选择最接近的单场景示例
-4. 同步 Bus、AHB-Lite 和 SPI NOR 分别参考 `examples/` 下对应示例
-5. 检查稳定电平使用 `.`、稳定 Bus 使用 `=.`，避免 `00`、`11` 和误用 `==`
-6. 用 `wavedrom-cli` 渲染:
+4. 绘制 AHB/AHB-Lite 前先阅读 `references/ahb-timing.md`，再按单次传输或回绕突发选择对应示例
+5. 同步 Bus 和 SPI NOR 分别参考 `examples/` 下对应示例
+6. 检查稳定电平使用 `.`、稳定 Bus 使用 `=.`，避免 `00`、`11` 和误用 `==`
+7. 用 `wavedrom-cli` 渲染:
 
 ```powershell
 wavedrom-cli --input <file.json> --svg <file.svg>
