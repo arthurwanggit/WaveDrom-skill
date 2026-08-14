@@ -28,6 +28,7 @@ WaveDrom 数字时序图绘制技能。提供 WaveJSON 语法参考、无毛刺�
 │   ├── spi_dual_read.json       # SPI NOR 0xBB，1-2-2
 │   └── spi_quad_read.json       # SPI NOR 0xEB，1-4-4
 ├── README.md
+├── LICENSE
 └── .gitignore
 ```
 
@@ -67,3 +68,7 @@ git clone https://github.com/arthurwanggit/WaveDrom-skill ".opencode\skills\wave
 ```
 
 安装或更新后重启 opencode。
+
+## License
+
+本项目采用 [Apache License 2.0](LICENSE)。
